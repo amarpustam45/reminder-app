@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+:root {
+  --main-colour: rgb(233, 233, 233);
+  --before-click: rgba(64, 255, 64, 0.6);
+  --after-click: rgb(64, 255, 64);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--main-colour);
+  margin: 3rem auto;
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px rgba(41, 41, 41, 0.712);
+}
+
+.todo {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.todo::after {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 20%;
+  height: 4px;
+  border-radius: 4px;
+  left: 40%;
+  background: var(--after-click);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10%;
+}
+
+.todo-input,
+.todo-btn {
+  padding: 0.3rem;
+  font-size: 2rem;
+  border: 0;
+}
+
+.todo-input {
+  outline: none;
+  border-bottom: 2px solid var(--before-click);
+  background-color: var(--main-colour);
+  transition: border-bottom 0.3s linear;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--after-click);
+}
+
+.todo-btn {
+  border-radius: 6px;
+  background-color: var(--before-click);
+  transition: background-color 0.3s linear;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.todo-btn:hover {
+  background-color: var(--after-click);
+}
+
+.todo-list {
+  width: 72%;
+  margin: 1rem auto;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  padding: 0.8rem;
+}
