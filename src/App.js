@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import List from './components/List';
 import './App.css';
 
 const App = () => {
+  const [list, setList] = useState([]);
   const [todo, setTodo] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('its working');
+
+    if (todo) {
+      const newItem = { id: uuidv4(), item: todo };
+      setList([...list, newItem]);
+      setTodo('');
+    }
   };
 
   return (
@@ -29,8 +36,11 @@ const App = () => {
         </div>
       </form>
       <div className='todo-list'>
-        <List />
+        <List items={list} />
       </div>
+      <button className='clear-completed' type='button'>
+        clear completed
+      </button>
     </section>
   );
 };

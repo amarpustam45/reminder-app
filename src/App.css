@@ -3,6 +3,8 @@
   --main-colour: rgb(233, 233, 233);
   --before-click: rgba(64, 255, 64, 0.6);
   --after-click: rgb(64, 255, 64);
+  --clear-before: rgba(255, 64, 64, 0.6);
+  --clear-after: rgba(255, 64, 64);
 }
 
 * {
@@ -50,7 +52,8 @@
 }
 
 .todo-input,
-.todo-btn {
+.todo-btn,
+.clear-completed {
   padding: 0.3rem;
   font-size: 2rem;
   border: 0;
@@ -68,12 +71,16 @@
   border-bottom: 2px solid var(--after-click);
 }
 
-.todo-btn {
+.todo-btn,
+.clear-completed {
   border-radius: 6px;
-  background-color: var(--before-click);
-  transition: background-color 0.3s linear;
   text-transform: capitalize;
+  transition: background-color 0.3s linear;
   font-weight: 600;
+}
+
+.todo-btn {
+  background-color: var(--before-click);
 }
 
 .todo-btn:hover {
@@ -86,4 +93,31 @@
   font-size: 1.6rem;
   text-transform: capitalize;
   padding: 0.8rem;
+}
+
+.clear-completed {
+  width: 40%;
+  margin: 1rem auto;
+  background-color: var(--clear-before);
+  transition: background-color 0.2s linear;
+}
+
+.clear-completed:hover {
+  background-color: var(--clear-after);
+}
+
+.each-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+}
+
+.check {
+  margin-right: 15px;
 }
