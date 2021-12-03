@@ -1,6 +1,7 @@
 import React from 'react';
+import { FaRegEdit } from 'react-icons/fa';
 
-const List = ({ items }) => {
+const List = ({ items, editing, isChecked, checked }) => {
   return (
     <div className='item-list'>
       {items.map((itemm) => {
@@ -13,10 +14,13 @@ const List = ({ items }) => {
                 id='item-check'
                 name='item-check'
                 className='check'
+                onChange={(e) => isChecked(id, e.target.checked)}
               />
               <label className='item-name'>{item}</label>
             </div>
-            <button className='edit-item'>edit</button>
+            <button className='edit-item'>
+              <FaRegEdit className='edit-icon' onClick={() => editing(id)} />
+            </button>
           </div>
         );
       })}

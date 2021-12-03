@@ -20,6 +20,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!name) {
       showAlert(true, 'danger', 'please enter value');
     } else if (name && isEditing) {
@@ -38,7 +39,6 @@ function App() {
     } else {
       showAlert(true, 'success', 'item added to the list');
       const newItem = { id: new Date().getTime().toString(), title: name };
-
       setList([...list, newItem]);
       setName('');
     }

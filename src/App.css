@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 :root {
-  --main-colour: rgb(233, 233, 233);
+  --main-colour: rgb(255, 255, 255);
   --before-click: rgba(64, 255, 64, 0.6);
   --after-click: rgb(64, 255, 64);
   --clear-before: rgba(255, 64, 64, 0.6);
@@ -84,6 +84,7 @@
 }
 
 .todo-btn:hover {
+  cursor: pointer;
   background-color: var(--after-click);
 }
 
@@ -91,7 +92,6 @@
   width: 72%;
   margin: 1rem auto;
   font-size: 1.6rem;
-  text-transform: capitalize;
   padding: 0.8rem;
 }
 
@@ -103,6 +103,7 @@
 }
 
 .clear-completed:hover {
+  cursor: pointer;
   background-color: var(--clear-after);
 }
 
@@ -118,6 +119,21 @@
   align-items: center;
 }
 
-.check {
+input.check {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
   margin-right: 15px;
+}
+
+.edit-item {
+  border: none;
+  font-size: 1.3rem;
+}
+.edit-item:hover {
+  cursor: pointer;
+}
+
+.edit-icon {
+  background-color: var(--main-colour);
 }
