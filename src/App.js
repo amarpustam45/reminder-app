@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import List from './components/List';
 import './App.css';
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem('list');
+  if (list) {
+    return JSON.parse(list);
+  } else {
+    return [];
+  }
+};
+
 const App = () => {
-  const [list, setList] = useState([]);
   const [todo, setTodo] = useState('');
+  const [list, setList] = useState(getLocalStorage);
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
 
@@ -38,19 +47,23 @@ const App = () => {
     setTodo(getItem.item);
   };
 
-  const isChecked = (id, value) => {
-    setList(
-      list.map((items) => {
-        if (items.id === id) {
-          return { ...items, check: value };
-        }
-        return items;
-      })
-    );
-    console.log(list);
+  const isChecked = (id) => {
+    const newList = list.map((items) => {
+      if (items.id === id) {
+        return { ...items, check: !items.check };
+      }
+      return items;
+    });
+    setList(newList);
   };
 
-  const clearCompleted = () => {};
+  const clearCompleted = () => {
+    setList(list.filter((item) => item.check === false));
+  };
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list));
+  }, [list]);
 
   return (
     <section className='container'>
@@ -73,6 +86,7 @@ const App = () => {
       <div className='todo-list'>
         <List items={list} editing={editing} isChecked={isChecked} />
       </div>
+      {/* <div className='btn-container'> */}
       <button
         className='clear-completed'
         type='button'
@@ -80,6 +94,7 @@ const App = () => {
       >
         clear completed
       </button>
+      {/* </div> */}
     </section>
   );
 };

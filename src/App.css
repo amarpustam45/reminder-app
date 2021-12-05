@@ -25,6 +25,10 @@
   box-shadow: 0px 3px 10px rgba(41, 41, 41, 0.712);
 }
 
+.container .clear-completed {
+  align-self: flex-end;
+}
+
 .todo {
   font-size: 3rem;
   font-weight: 800;
@@ -96,8 +100,9 @@
 }
 
 .clear-completed {
-  width: 40%;
-  margin: 1rem auto;
+  font-size: 1rem;
+  margin: 1rem 4rem;
+  width: 30%;
   background-color: var(--clear-before);
   transition: background-color 0.2s linear;
 }
