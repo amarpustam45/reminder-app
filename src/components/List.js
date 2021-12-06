@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRegEdit } from 'react-icons/fa';
+import { FiEdit } from 'react-icons/fi';
 
 const List = ({ items, editing, isChecked }) => {
   return (
@@ -25,7 +25,7 @@ const List = ({ items, editing, isChecked }) => {
               </label>
             </div>
             <button className='edit-item'>
-              <FaRegEdit className='edit-icon' onClick={() => editing(id)} />
+              <FiEdit className='edit-icon' onClick={() => editing(id)} />
             </button>
           </div>
         );
