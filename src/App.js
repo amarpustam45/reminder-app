@@ -86,7 +86,6 @@ const App = () => {
       <div className='todo-list'>
         <List items={list} editing={editing} isChecked={isChecked} />
       </div>
-      {/* <div className='btn-container'> */}
       <button
         className='clear-completed'
         type='button'

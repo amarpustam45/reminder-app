@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 :root {
-  --main-colour: rgb(255, 255, 255);
+  --main-colour: rgb(239, 239, 239);
   --before-click: rgba(64, 255, 64, 0.6);
   --after-click: rgb(64, 255, 64);
   --clear-before: rgba(255, 64, 64, 0.6);
@@ -126,8 +126,10 @@
 }
 
 input.check {
-  width: 15px;
-  height: 15px;
+  min-width: 15px;
+  max-width: 15px;
+  min-height: 15px;
+  max-height: 15px;
   cursor: pointer;
   margin-right: 15px;
 }
@@ -136,6 +138,7 @@ input.check {
   border: none;
   font-size: 1.3rem;
 }
+
 .edit-item:hover {
   cursor: pointer;
 }
