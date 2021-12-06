@@ -68,14 +68,14 @@ const App = () => {
   return (
     <section className='container'>
       <form onSubmit={handleSubmit}>
-        <h1 className='todo'>todo</h1>
+        <h1 className='todo'>my todo</h1>
         <div className='controls'>
           <input
             type='text'
             className='todo-input'
             id='name'
             value={todo}
-            placeholder='Wash Car'
+            placeholder='Walk the dog'
             onChange={(e) => setTodo(e.target.value)}
           />
           <button type='submit' className='todo-btn'>

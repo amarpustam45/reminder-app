@@ -36,6 +36,7 @@
   text-align: center;
   padding: 1rem 0;
   position: relative;
+  text-shadow: 2px 2px 5px #48ff0085;
 }
 
 .todo::after {
@@ -141,4 +142,33 @@ input.check {
 
 .edit-icon {
   background-color: var(--main-colour);
+}
+
+@media only screen and (max-width: 930px) {
+  .container {
+    width: 90vw;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .todo-input {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .todo-btn {
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  .todo-list {
+    width: 90%;
+  }
+
+  .clear-completed {
+    width: 50%;
+    margin-right: 2rem;
+  }
 }

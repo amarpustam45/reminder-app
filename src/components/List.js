@@ -14,7 +14,7 @@ const List = ({ items, editing, isChecked }) => {
                 id='item-check'
                 name='item-check'
                 className='check'
-                value={check}
+                checked={check}
                 onChange={() => isChecked(id)}
               />
               <label
